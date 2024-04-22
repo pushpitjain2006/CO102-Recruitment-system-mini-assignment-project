@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Factory</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/footer.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="{{ url_for('static', filename='resources/images.png') }}"
+        alt="Company Logo"
+        class="company-logo"
+      />
+      <h1 class="center-heading">JOB FACTORY</h1>
+      <div class="buttons">
+        <div class="post-jobs">
+          <a href="/post" target="_blank">Post Jobs</a>
+        </div>
+        <div class="internship-button">
+          <a href="/internships" target="_blank">Internship</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-listings">
+      <h1>All Job Postings</h1>
+      <div class="job-post header-row">
+        <div class="job-company">Company Name</div>
+        <div class="job-details">
+          <div class="job-position">Position</div>
+          <div class="job-salary">Salary</div>
+          <div class="job-location">Location</div>
+          <div class="job-remote">Remote</div>
+          <div class="job-qualifications">Qualifications</div>
+          <div class="job-contact">Contact</div>
+          <div class="job-date">Date</div>
+        </div>
+      </div>
+      {% for job in jobs %}
+      <div class="job-post">
+        <div class="job-company">{{ job[1] }}</div>
+        <div class="job-details">
+          <div class="job-position">{{ job[2] }}</div>
+          <div class="job-salary">{{ job[3] }}</div>
+          <div class="job-location">{{ job[4] }}</div>
+          <div class="job-remote">{{ job[5] }}</div>
+          <div class="job-qualifications">{{ job[6] }}</div>
+          <div class="job-contact">{{ job[7] }}</div>
+          <div class="job-date">{{ job[8] }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="end-section">
+      <div>
+        <div class="social-media">
+          <a href="https://www.linkedin.com/in/pushpitjain/"
+            ><img
+              src="{{ url_for('static', filename='resources/png-clipart-linkedin-linkedin-thumbnail.png') }}"
+              alt="LinkedIn"
+          /></a>
+          <a href="https://www.instagram.com/pushpitjain2006/"
+            ><img
+              src="{{ url_for('static', filename='resources/instagram.png') }}"
+              alt="Instagram"
+          /></a>
+          <a href="https://github.com/pushpitjain2006"
+            ><img
+              src="{{ url_for('static', filename='resources/github.png') }}"
+              alt="GitHub"
+          /></a>
+          <a href="https://twitter.com/Pushpit_jain_18"
+            ><img
+              src="{{ url_for('static', filename='resources/twitter.png') }}"
+              alt="Twitter"
+          /></a>
+          <a href="https://www.facebook.com/pushpit.jain.108"
+            ><img
+              src="{{ url_for('static', filename='resources/facebook.png') }}"
+              alt="Facebook"
+          /></a>
+        </div>
+        <div class="maker-details">
+          <img
+            src="{{ url_for('static', filename='resources/1691057718257 2.jpeg') }}"
+            alt="Pushpit Jain"
+          />
+          <div class="details">
+            <p>Name: Pushpit Jain</p>
+            <p>Roll No: 23/SE/123</p>
+            <p>Software-2</p>
+            <p>Delhi Technological University</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <a href="https://www.instagram.com/pushpitjain2006/">Website</a>
+        <a href="/privacy_policy">Privacy Policy</a>
+        <a href="/terms_conditions">Terms & Conditions</a>
+      </div>
+    </div>
+  </body>
+</html>
