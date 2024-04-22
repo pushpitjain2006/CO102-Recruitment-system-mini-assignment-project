@@ -27,7 +27,7 @@ def add_job_route():
     qualifications = request.form['qualifications']
     contact = request.form['contact']
     add_job(company, position, salary, location, remote, qualifications, contact)
-    return redirect(url_for('index'))
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(port=1436)
